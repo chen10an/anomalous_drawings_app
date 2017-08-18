@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #696D7D;
+
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.card {
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 24px rgba(0, 0, 0, 0.22), 0 19px 76px rgba(0, 0, 0, 0.3);
+  min-width: 60%;
+  max-width: 95%;
+  margin: 5% 0;
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.head {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.container1 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.draw-show {
+  margin: 0.5rem 2rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.container2 {
+  margin: 0.5rem 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sameWidth {
+}
+
+canvas {
+  align-self: center;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.24), 0 1.5px 6px rgba(0, 0, 0, 0.12);
+}
+
+ h1 {
+   font-family: 'Give You Glory', cursive;
+   font-size: 3rem;
+   margin: 0;
+   display: inline;
+ }
+
+ p {
+   font-family: 'Lato', sans-serif;
+   font-size: 1.5rem;
+   font-weight: 300;
+   margin: 0.5rem 0;
+   text-align: center;
+   /*color: white;*/
+ }
+
+ #cost {
+   font-family: 'Lato', sans-serif;
+ }
+
+#anomaly {
+  color: #FF729F;
+}
+
+.button {
+  margin-top: 1rem;
+}
+
+#clear {
+  background-color: #F9F7F9;
+  color: black;
+}
+
+#clear:hover {
+  cursor: pointer;
+  background-color: #FF729F;
+}
+
+#placeholder {
+  opacity: 0;
+}

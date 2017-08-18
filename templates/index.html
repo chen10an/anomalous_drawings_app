@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>
+    Anomaly Detection for Bowties
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css?family=Give+You+Glory" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
+  <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+  <div class="card">
+    <div class="head">
+      <h1 id="anomaly">Anomaly&nbsp</h1> <h1>Detection for Bowties</h1>
+    </div>
+    <div class="container1">
+      <div class="draw-show">
+        <!-- <p>Draw Here:</p> -->
+        <canvas id="canvas" width="250" height="250"></canvas>
+        <div id="clear" class="button">
+          <p>CLEAR</p>
+        </div>
+      </div>
+      <div class="draw-show">
+        <!-- <p>Reconstruction:</p> -->
+        <canvas id="canvasRe" width="250" height="250">></canvas>
+        <div id="placeholder" class="button">
+          <p>CLEAR</p>
+        </div>
+      </div>
+    </div>
+    <div class="container2">
+      <div class="sameWidth">
+        <p>Reconstruction cost:</p>
+        <p id="cost">0</p>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script
+src="https://code.jquery.com/jquery-3.2.1.min.js"
+integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+crossorigin="anonymous">
+</script>
+
+<script type="text/javascript" src = "{{ url_for('static', filename = 'draw.js') }}" ></script>
+
+</html>
