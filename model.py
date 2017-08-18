@@ -1,10 +1,12 @@
+# commented out parts that the app doesn't need
+
 # libraries
 import numpy as np
 import tensorflow as tf
-from tqdm import tqdm
+# from tqdm import tqdm
 
 # file
-import utils
+# import utils
 
 class Autoencoder:
     def __init__(self, X_train, X_test, lr=0.01, epochs=20, batch_size=256,
@@ -52,31 +54,31 @@ class Autoencoder:
         # saver for variables
         self.saver = tf.train.Saver()
 
-    def train(self, model_file=''):
-        print("\n Training model...")
-        # run graph
-        history_cost = []
-        for e in range(self.epochs):
-            X_temp = np.copy(self.X_train)
-            for i in tqdm(range(self.n_batch)):
-                batch, start = utils.getRandBatch(X_temp, self.batch_size)
-                # X_temp = np.delete(X_temp, np.s_[start:start+batch_size], axis=0)
-                _, c = self.sess.run([self.optimization, self.cost], {self.X: batch})
-
-            cost_overall = self.sess.run(self.cost, {self.X:self.X_train})
-            history_cost.append(cost_overall)
-
-            if e % 1 == 0:
-                print("epoch {}\tcost {}".format(e, cost_overall))
-
-            # early stopping in terms of cost
-            if e >= self.early_stop:
-                if (np.argmin(history_cost) == e - self.early_stop) and \
-                (history_cost[e] - history_cost[e - self.early_stop] > 1e-5):
-                    print('early stop\nbest iteration: {}'.format(np.argmin(history_cost)))
-                    break
-
-        # save variables if model_file string is not empty
-        if model_file:
-            save_path = self.saver.save(self.sess, model_file)
-            print("Model saved in file: {}".format(save_path))
+    # def train(self, model_file=''):
+    #     print("\n Training model...")
+    #     # run graph
+    #     history_cost = []
+    #     for e in range(self.epochs):
+    #         X_temp = np.copy(self.X_train)
+    #         for i in tqdm(range(self.n_batch)):
+    #             batch, start = utils.getRandBatch(X_temp, self.batch_size)
+    #             # X_temp = np.delete(X_temp, np.s_[start:start+batch_size], axis=0)
+    #             _, c = self.sess.run([self.optimization, self.cost], {self.X: batch})
+    #
+    #         cost_overall = self.sess.run(self.cost, {self.X:self.X_train})
+    #         history_cost.append(cost_overall)
+    #
+    #         if e % 1 == 0:
+    #             print("epoch {}\tcost {}".format(e, cost_overall))
+    #
+    #         # early stopping in terms of cost
+    #         if e >= self.early_stop:
+    #             if (np.argmin(history_cost) == e - self.early_stop) and \
+    #             (history_cost[e] - history_cost[e - self.early_stop] > 1e-5):
+    #                 print('early stop\nbest iteration: {}'.format(np.argmin(history_cost)))
+    #                 break
+    #
+    #     # save variables if model_file string is not empty
+    #     if model_file:
+    #         save_path = self.saver.save(self.sess, model_file)
+    #         print("Model saved in file: {}".format(save_path))
