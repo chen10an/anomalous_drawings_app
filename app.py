@@ -1,7 +1,6 @@
 #libraries
 from flask import Flask, render_template, request, jsonify
 import numpy as np
-import matplotlib.pyplot as plt
 import tensorflow as tf
 # import pickle
 
