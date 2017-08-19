@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }).done(function(data) {
           var cost = Number(data.cost)
           if (cost > threshold) {
-            document.getElementById('cost').style.color = '#FF729F';
+            document.getElementById('cost').style.color = '#F45B69';
           } else {
             document.getElementById('cost').style.color = 'black';
           }
