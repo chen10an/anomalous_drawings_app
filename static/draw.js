@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     context.clearRect(0, 0, canvas.width, canvas.height);
     contextRe.clearRect(0, 0, canvasRe.width, canvasRe.height);
     document.getElementById('cost').innerHTML = 0;
-    document.getElementById('cost').style.color = 'black';
+    document.getElementById('canvasRe').style.backgroundColor = '#F9F7F9';
   }
 
   // This painting tool works like a drawing pencil which tracks the mouse
@@ -119,9 +119,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
         }).done(function(data) {
           var cost = Number(data.cost)
           if (cost > threshold) {
-            document.getElementById('cost').style.color = '#F45B69';
+            document.getElementById('canvasRe').style.backgroundColor = '#F45B69';
           } else {
-            document.getElementById('cost').style.color = 'black';
+            document.getElementById('canvasRe').style.backgroundColor = '#F9F7F9';
           }
           document.getElementById('cost').innerHTML = cost.toFixed(5);
 
