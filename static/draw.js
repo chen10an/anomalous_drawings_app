@@ -26,13 +26,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
     context = canvas.getContext('2d');
     context.lineWidth = 10;
     context.lineCap = 'round';
-    context.font = '30px Lato';
+    context.font = '30px sans-serif';
     context.fillStyle = 'rgba(0,0,0,0.1)';
     context.textAlign = 'center';
     context.fillText("Draw Here", canvas.width/2, canvas.height/2);
 
     contextRe = canvasRe.getContext('2d');
-    contextRe.font = '30px Lato';
+    contextRe.font = '30px sans-serif';
     contextRe.fillStyle = 'rgba(0,0,0,0.1)';
     contextRe.textAlign = 'center';
     contextRe.fillText("Reconstruction", canvasRe.width/2, canvasRe.height/2);
